@@ -1,3 +1,7 @@
+"use strict";
+
+let clientList = require('./clientObjects.js');
+
 Client = function (name, id, type) {
     this.name = name;
     this.id = id;
@@ -6,6 +10,9 @@ Client = function (name, id, type) {
 
 Client.prototype.getClients = () => {
     console.log('Obteniendo listado de clientes');
+    for (let i = 0; i < clientList.length; i++) {
+        console.log(clientList[i]);
+    }
 }
 
 Client.prototype.getClientsByType = (tipo) => {
@@ -16,7 +23,7 @@ Client.prototype.getClientByName = (name) => {
     console.log('Obteniendo cliente con nombre: '+ name);
 }
 
-Client.prototype.getClientBySector = (sector) => {
+Client.prototype.getClientsBySector = (sector) => {
     console.log('Obteniendo clientes del sector: ' + sector);
 }
 
