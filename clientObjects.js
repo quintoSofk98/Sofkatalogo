@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-let {Enterprise, Person} = require('./models.js');
+var {Enterprise, Person} = require('./models.js');
 
 let alpina = new Enterprise("Alpina Productos Alimenticios S.A.", "860.025.900-2", "5,500-10,000 empleados", "Alimenticio")
 let proteccion = new Enterprise("Protección S. A",  "800.229.739-0", "1,001-5,000 empleados", "Servicio Financiero")

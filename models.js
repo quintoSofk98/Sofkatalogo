@@ -10,7 +10,7 @@ class Project {
     }
 }
 
-class Client {
+module.exports = class Client {
     constructor(name, type) {
         this.name = name;
         this.type = type;
@@ -49,5 +49,3 @@ class Technology {
         this.name = name;
     }
 }
-
-//module.exports = { Person, Enterprise };

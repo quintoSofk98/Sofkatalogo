@@ -1,6 +1,7 @@
-"use strict";
+'use strict';
 
-let clientList = require('./clientObjects.js');
+var clientList = require('./clientObjects.js');
+var Client = require('./models.js');
 
 Client = function (name, id, type) {
     this.name = name;
