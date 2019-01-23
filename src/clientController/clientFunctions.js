@@ -15,7 +15,7 @@ Client.prototype.getClients = () => {
         showClient = arr[j].map(function (client) {
             return '<li>' + client.name + '</li>'
         });
-        
+
         document.getElementById("client").innerHTML = showClient;
     }
 
