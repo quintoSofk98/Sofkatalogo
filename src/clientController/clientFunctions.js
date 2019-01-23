@@ -24,6 +24,10 @@ Client.prototype.getClients = () => {
 
 Client.prototype.getClientsPerson = (type) => {
     console.log('Obteniendo clientes de tipo: ' + type);
+    var filterPersona = arr.filter(function (client) {
+        return (client.type === "Persona")
+    });
+    console.log(filterPersona)
 }
 
 
