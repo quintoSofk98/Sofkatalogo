@@ -11,9 +11,8 @@ Client = function (name, id, type) {
 
 Client.prototype.getClients = () => {
     console.log('Obteniendo listado de clientes');
-    for (let i = 0; i < clientList.length; i++) {
-       console.log(clientList[i]);  
-    }
+    document.getElementById("client").innerHTML = clientList.name;
+
 }
 
 Client.prototype.getClientsByType = (tipo) => {
@@ -21,7 +20,7 @@ Client.prototype.getClientsByType = (tipo) => {
 }
 
 Client.prototype.getClientByName = (name) => {
-    console.log('Obteniendo cliente con nombre: '+ name);
+    console.log('Obteniendo cliente con nombre: ' + name);
 }
 
 Client.prototype.getClientsBySector = (sector) => {
