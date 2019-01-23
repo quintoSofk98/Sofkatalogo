@@ -11,15 +11,17 @@ class Project {
 }
 
 class Client {
-    constructor(name, type) {
+    constructor(name, type, img) {
         this.name = name;
         this.type = type;
+        this.img = img;
+
     }
 };
 
 class Enterprise extends Client {
-    constructor (name, nit, size, sector){
-        super (name, "Empresa")
+    constructor (name, nit, size, sector, img){
+        super (name, "Empresa", img)
         this.nit = nit;
         this.size = size;
         this.sector = sector;
@@ -28,8 +30,8 @@ class Enterprise extends Client {
 };
 
 class Person extends Client {
-    constructor(name, cedula) {
-        super(name, "Persona")
+    constructor(name, cedula, img) {
+        super(name, "Persona", img)
         this.cedula = cedula;
     }
 };

@@ -13,7 +13,7 @@ Client.prototype.getClients = () => {
     console.log('Obteniendo listado de clientes');
     for (let j = 0; j < arr.length; j++) {
         showClient += arr[j].map(function (client) {
-            return '<h3>' + client.name + '</h3>'
+            return '<img src="'+client.img+'" title="'+"img"+'" alt="'+"im"+'" />';
         });
     }
 
