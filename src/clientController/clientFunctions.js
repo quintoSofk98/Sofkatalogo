@@ -54,8 +54,4 @@ Client.prototype.getClientsBySector = (sector) => {
 
 let client = new Client();
 client.getClients();
-<<<<<<< HEAD
 console.log(arr[0]);
-=======
-client.getClientsByType("Persona");
->>>>>>> 0d2c94d1815b50f53b8db6f086b66b0afe39161c
