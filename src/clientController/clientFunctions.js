@@ -2,6 +2,11 @@
 
 var clientList = require('./clientObjects.js');
 var Client = require('../models.js');
+var arr = [];
+
+for (let i in clientList) {
+    arr.push(clientList[i]);
+}
 
 Client = function (name, id, type) {
     this.name = name;
@@ -11,8 +16,10 @@ Client = function (name, id, type) {
 
 Client.prototype.getClients = () => {
     console.log('Obteniendo listado de clientes');
-    document.getElementById("client").innerHTML = clientList.name;
-
+    var showClient = arr.map(function (client) {
+        return '<li>' + client.name + '</li>'
+    });
+    document.getElementById("client").innerHTML = showClient;
 }
 
 Client.prototype.getClientsByType = (tipo) => {

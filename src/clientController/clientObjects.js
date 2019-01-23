@@ -9,29 +9,12 @@ let coordinadora = new Enterprise("COORDINADORA MERCANTIL S.A.", "890.904.713", 
 
 let juan = new Person("Juan Montoya", "1.038.435,932")
 let liza = new Person("Liza Sanchez", "42.813.784")
+let roxana = new Person("Roxana Gonzalez", "1.020.456.846"); 
+let martha = new Person("Martha Arévalo", "37.080.664"); 
+let gustavo = new Person("Gustavo Gómez", "1.100.950.935");
+let diego = new Person("Diego Barco", "1.053.773.244"); 
+let luisa = new Person("Diego Barco", "1.036.389.136"); 
 
-let clientsCollection = { alpina, proteccion, sura, coordinadora, juan, liza };
-let juan = new Person("Juan Montoya", "1.038.435.932" )
-let liza = new Person("Liza Sanchez", "42.813.784") 
-let roxana = new Person("Roxana Gonzalez", "1.020.456.846") 
-let martha = new Person("Martha Arévalo", "37.080.664") 
-let gustavo = new Person("Gustavo Gómez", "1.100.950.935")
-let diego = new Person("Diego Barco", "1.053.773.244") 
-let luisa = new Person("Diego Barco", "1.036.389.136") 
+let clientsCollection = { alpina, proteccion, sura, coordinadora, juan, liza, roxana, martha, gustavo, diego, luisa };
 
-
-let clientsCollection = [
-    alpina, 
-    proteccion, 
-    sura, 
-    coordinadora, 
-    juan, 
-    liza, 
-    roxana, 
-    martha, 
-    gustavo, 
-    diego, 
-    luisa ];
-
-
-module.exports = JSON.parse(clientsCollection);
+module.exports = clientsCollection;
