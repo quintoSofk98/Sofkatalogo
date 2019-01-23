@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
 var clientList = require('./clientObjects.js');
-var Client = require('./models.js');
+var Client = require('../models.js');
 
 Client = function (name, id, type) {
     this.name = name;
@@ -12,7 +12,7 @@ Client = function (name, id, type) {
 Client.prototype.getClients = () => {
     console.log('Obteniendo listado de clientes');
     for (let i = 0; i < clientList.length; i++) {
-        console.log(clientList[i]);
+       console.log(clientList[i]);  
     }
 }
 

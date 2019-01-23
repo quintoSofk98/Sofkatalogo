@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 class Project {
     constructor(name, status, description, startDate, endDate) {
@@ -10,14 +10,14 @@ class Project {
     }
 }
 
-module.exports = class Client {
+class Client {
     constructor(name, type) {
         this.name = name;
         this.type = type;
     }
 };
 
-module.exports = class Enterprise extends Client {
+class Enterprise extends Client {
     constructor (name, nit, size, sector){
         super (name, "Empresa")
         this.nit = nit;
@@ -27,7 +27,7 @@ module.exports = class Enterprise extends Client {
     }
 };
 
-module.exports = class Person extends Client {
+class Person extends Client {
     constructor(name, cedula) {
         super(name, "Persona")
         this.cedula = cedula;
@@ -49,3 +49,5 @@ class Technology {
         this.name = name;
     }
 }
+
+module.exports = {Client, Person, Enterprise};
