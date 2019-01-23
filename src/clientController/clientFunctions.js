@@ -25,26 +25,26 @@ Client.prototype.getClients = () => {
 
 Client.prototype.getClientsByType = (type) => {
     console.log('Obteniendo clientes de tipo: ' + type);
-    switch(type){
+    switch (type) {
         case "Empresa":
-        var filterEnterprise = arr.filter (function (client){
-            return (client.type === "Empresa")
-        });
-        console.log(filterEnterprise);
-        break;
-        
+            var filterEnterprise = arr.filter(function (client) {
+                return (client.type === "Empresa")
+            });
+            console.log(filterEnterprise);
+            break;
+
         case "Persona":
-        var filterPersona = arr.filter (function (client){
-            return (client.type === "Persona")
-        });
-        console.log(filterPersona)
-        break;
-    }  
+            var filterPersona = arr.filter(function (client) {
+                return (client.type === "Persona")
+            });
+            console.log(filterPersona)
+            break;
+    }
 }
 
 Client.prototype.getClientByName = (name) => {
     console.log('Obteniendo cliente con nombre: ' + name);
-    }  
+
 
 }
 
