@@ -27,7 +27,27 @@ Client.prototype.getClientsPerson = (type) => {
     console.log(filterPersona);
 }
 
-(Client.prototype.getClientsEnterprise = () => {
+(Client.prototype.getAllEnterprises = () => {
+    document.getElementById("enterprises").addEventListener('click', () => {
+        document.getElementById("client").innerHTML = "Mostrando solo las empresas";
+    });
+})();
+
+(Client.prototype.getAllPersons = () => {
+    document.getElementById("persons").addEventListener('click', () => {
+        document.getElementById("client").innerHTML = "Mostrando solo las personas asociadas";
+    });
+})();
+
+document.getElementById("allClients").addEventListener('click', () => {
+    
+    //Debo verificar si ya estan cargados los otros archivos en la principal
+        Client.prototype.getClients();
+    
+
+});
+
+(Client.prototype.getClientsEnterpriseByName = () => {
 
     document.getElementById("searchButton").addEventListener('click', () => {
         console.log('Obteniendo clientes de tipo: ');
