@@ -17,7 +17,8 @@ class Client {
     }
 };
 
-class Enterprise extends Client {
+class 
+ extends Client {
     constructor (name, nit, size, sector){
         super (name, "Empresa")
         this.nit = nit;
