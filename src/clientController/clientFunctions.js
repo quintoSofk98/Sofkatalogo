@@ -13,24 +13,39 @@ Client.prototype.getClients = () => {
     console.log('Obteniendo listado de clientes');
     for (let j = 0; j < arr.length; j++) {
         showClient += arr[j].map(function (client) {
-            return '<img src="'+client.img+'" title="'+"img"+'" alt="'+"im"+'" />';
+            return '<img src="' + client.img + '" title="' + "img" + '" alt="' + "im" + '" />';
         });
     }
 
     document.getElementById("client").innerHTML = showClient;
-    console.log(showClient);
-    
+
 }
 
-Client.prototype.getClientsPerson = (type) => {
-    console.log('Obteniendo clientes de tipo: ' + type);
+Client.prototype.getClientsPerson = (name) => {
+
+
 }
 
 
-Client.prototype.getClientsEnterprise = (name) => {
+Client.prototype.getClientsEnterprise = () => {
 
+    document.getElementById("searchButton").addEventListener('click', () => {
+        console.log('Obteniendo clientes de tipo: ');
+        let cliSearched = document.getElementById("clientToSearch").value;
+        var show = arr[0].map( (client) => {
+            if (client.name === cliSearched) {
+                return '<img src="' + client.img + '" title="' + "img" + '" alt="' + "img" + '" />';
+            }else{
+                return '<h3>El cliente no fue encontrado<H3/>';
+            }
+        });
+
+        document.getElementById("client").innerHTML = show;
+
+    });
 }
 
 let client = new Client();
 client.getClients();
+client.getClientsEnterprise();
 
