@@ -12,7 +12,7 @@ for (let i in clientList) {
 Client.prototype.getClients = () => {
     console.log('Obteniendo listado de clientes');
     for (let j = 0; j < arr.length; j++) {
-        showClient = arr[j].map(function (client) {
+        showClient += arr[j].map(function (client) {
             return '<li>' + client.name + '</li>'
         });
 
