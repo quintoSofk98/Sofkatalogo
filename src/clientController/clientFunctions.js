@@ -23,12 +23,29 @@ Client.prototype.getClients = () => {
 
 }
 
-Client.prototype.getClientsByType = (tipo) => {
-    console.log('Obteniendo clientes de tipo: ' + tipo);
+Client.prototype.getClientsByType = (type) => {
+    console.log('Obteniendo clientes de tipo: ' + type);
+    switch(type){
+        case "Empresa":
+        var filterEnterprise = arr.filter (function (client){
+            return (client.type === "Empresa")
+        });
+        console.log(filterEnterprise);
+        break;
+        
+        case "Persona":
+        var filterPersona = arr.filter (function (client){
+            return (client.type === "Persona")
+        });
+        console.log(filterPersona)
+        break;
+    }  
 }
 
 Client.prototype.getClientByName = (name) => {
     console.log('Obteniendo cliente con nombre: ' + name);
+    }  
+
 }
 
 Client.prototype.getClientsBySector = (sector) => {
@@ -37,4 +54,8 @@ Client.prototype.getClientsBySector = (sector) => {
 
 let client = new Client();
 client.getClients();
+<<<<<<< HEAD
 console.log(arr[0]);
+=======
+client.getClientsByType("Persona");
+>>>>>>> 0d2c94d1815b50f53b8db6f086b66b0afe39161c
