@@ -103,10 +103,9 @@ eval("\r\n\r\nvar clientList = __webpack_require__(/*! ./clientObjects.js */ \".
   !*** ./src/clientController/clientObjects.js ***!
   \***********************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-eval("\r\n\r\nvar { Enterprise, Person } = __webpack_require__(/*! ../models.js */ \"./src/models.js\");\r\n\r\nlet alpina = new Enterprise(\"Alpina Productos Alimenticios S.A.\", \"860.025.900-2\", \"5,500-10,000 empleados\", \"Alimenticio\")\r\nlet proteccion = new Enterprise(\"Protección S. A\", \"800.229.739-0\", \"1,001-5,000 empleados\", \"Servicio Financiero\")\r\nlet sura = new Enterprise(\"Seguros Generales Suramericana S.A.\", \"890.903.407-9 \", \"10,001+ empleados\", \"Seguros\")\r\nlet coordinadora = new Enterprise(\"COORDINADORA MERCANTIL S.A.\", \"890.904.713\", \"1,001-5,000 empleados\", \"Importaciones y Exportaciones\")\r\n\r\nlet juan = new Person(\"Juan Montoya\", \"1.038.435,932\")\r\nlet liza = new Person(\"Liza Sanchez\", \"42.813.784\")\r\n\r\nlet clientsCollection = { alpina, proteccion, sura, coordinadora, juan, liza };\r\n\r\n\r\nmodule.exports = JSON.parse(clientsCollection);\n\n//# sourceURL=webpack:///./src/clientController/clientObjects.js?");
+eval("throw new Error(\"Module parse failed: Identifier 'juan' has already been declared (14:4)\\nYou may need an appropriate loader to handle this file type.\\n| \\r\\n| let clientsCollection = { alpina, proteccion, sura, coordinadora, juan, liza };\\r\\n> let juan = new Person(\\\"Juan Montoya\\\", \\\"1.038.435.932\\\" )\\r\\n| let liza = new Person(\\\"Liza Sanchez\\\", \\\"42.813.784\\\") \\r\\n| let roxana = new Person(\\\"Roxana Gonzalez\\\", \\\"1.020.456.846\\\") \\r\");\n\n//# sourceURL=webpack:///./src/clientController/clientObjects.js?");
 
 /***/ }),
 
