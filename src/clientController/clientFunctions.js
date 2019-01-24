@@ -45,6 +45,11 @@ Client.prototype.getClientsPerson = (type) => {
                 return cardEnterprise(enterprise);
             });
             document.getElementById("client").innerHTML = showEnterprise;
+            document.getElementById("moreEnterprise").addEventListener('click', () => {
+                let enterpriseName = document.getElementById("enterpriseName").value;
+                //document.getElementById("client").innerHTML = cardEnterpriseDetails(actual);
+                console.log(document.getElementById("enterpriseName").value);
+            });
         });
     } catch (error) {
         console.log("Ha ocurrido un error: " + error);
@@ -95,13 +100,13 @@ Client.prototype.getClientsPerson = (type) => {
 
 })();
 
+
 function cardGeneric(client) {
     return '<div class="card col-md-3 mr-5 mb-3" style="width:400px">' +
         '<img src="' + client.img + '" alt="Card image" style="width:100%">' +
         '<div class="card-body">' +
         '<h4 class="card-title">' + client.name + '</h4>' +
         '<p class="card-text">Sofka se debe a sus clientes a quienes consideramos socios estratégicos...</p>' +
-        '<a href="" class="btn btn-primary">Ver mas</a>' +
         '</div>' +
         '</div>'
 }
@@ -112,7 +117,7 @@ function cardEnterprise(clientEnterprise) {
         '<div class="card-body">' +
         '<h4 class="card-title" id="enterpriseName">' + clientEnterprise.name + '</h4>' +
         '<p class="card-text">' + clientEnterprise.sector + '</p>' +
-        '<a href="" id="moreEnterprise" class="btn btn-primary">Ver mas</a>' +
+        '<a href="#" id="moreEnterprise" class="btn btn-primary">Ver mas</a>'+
         '</div>' +
         '</div>'
 }
