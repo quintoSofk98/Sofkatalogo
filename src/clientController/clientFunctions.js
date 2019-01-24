@@ -10,19 +10,18 @@ for (let i in clientList) {
 }
 
 (Client.prototype.getClients = () => {
-    for (let j = 0; j < arr.length; j++) {
-        showClient += arr[j].map((client) => {
-            return '<div class="card col-md-3 mr-5 mb-3" style="width:400px">' +
-                '<img src="' + client.img + '" alt="Card image" style="width:100%">' +
-                '<div class="card-body">' +
-                '<h4 class="card-title">' + client.name + '</h4>' +
-                '<p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>' +
-                '<a href="" class="btn btn-primary">Ver mas</a>' +
-                '</div>' +
-                '</div>'
-        });
+
+    try {
+        for (let j = 0; j < arr.length; j++) {
+            showClient += arr[j].map((client) => {
+                return cardGeneric(client);
+            });
+        }
+        document.getElementById("client").innerHTML = showClient;
+    } catch (error) {
+        console.log("Ha ocurrido un error: " + error);
     }
-    document.getElementById("client").innerHTML = showClient;
+
 })();
 
 Client.prototype.getClientsPerson = (type) => {
@@ -33,67 +32,88 @@ Client.prototype.getClientsPerson = (type) => {
 }
 
 (Client.prototype.getAllEnterprises = () => {
-    document.getElementById("enterprises").addEventListener('click', () => {
-        var showEnterprise = arr[0].map((enterprise) => {
-            return '<div class="card col-md-3 mr-5 mb-3" style="width:400px">' +
-                '<img src="' + enterprise.img + '" alt="Card image" style="width:100%">' +
-                '<div class="card-body">' +
-                '<h4 class="card-title" id="enterpriseName">' + enterprise.name + '</h4>' +
-                '<p class="card-text">' + enterprise.sector + '</p>' +
-                '<a href="" id="moreEnterprise" class="btn btn-primary">Ver mas</a>' +
-                '</div>' +
-                '</div>'
+
+    try {
+        document.getElementById("enterprises").addEventListener('click', () => {
+            var showEnterprise = arr[0].map((enterprise) => {
+                return cardEnterprise(enterprise);
+            });
+            document.getElementById("client").innerHTML = showEnterprise;
         });
-        document.getElementById("client").innerHTML = showEnterprise;
-    });
+    } catch (error) {
+        console.log("Ha ocurrido un error: " + error);
+    }
+
 })();
 
 (Client.prototype.getAllPersons = () => {
-    document.getElementById("persons").addEventListener('click', () => {
-        var showPerson = arr[1].map((person) => {
-            return '<div class="card col-md-3 mr-5 mb-3" style="width:400px">' +
-                '<img src="' + person.img + '" alt="Card image" style="width:100%">' +
-                '<div class="card-body">' +
-                '<h4 class="card-title">' + person.name + '</h4>' +
-                '</div>' +
-                '</div>'
+
+    try {
+        document.getElementById("persons").addEventListener('click', () => {
+            var showPerson = arr[1].map((person) => {
+                return cardGeneric(person);
+            });
+            document.getElementById("client").innerHTML = showPerson;
         });
-        document.getElementById("client").innerHTML = showPerson;
-    });
+    } catch (error) {
+        console.log("Ha ocurrido un error: " + error);
+    }
+
 })();
 
 document.getElementById("allClients").addEventListener('click', () => {
     //Debo verificar si ya estan cargados los otros archivos en la principal
-    Client.prototype.getClients();
+    document.getElementById("client").innerHTML = "todos";
+    //Client.prototype.getClients();
 });
 
 
 (Client.prototype.getClientsEnterpriseByName = () => {
 
-    document.getElementById("searchButton").addEventListener('click', () => {
-        let cliSearched = document.getElementById("clientToSearch").value;
-        let foundCliente;
-        let actual;
+    try {
+        document.getElementById("searchButton").addEventListener('click', () => {
+            let cliSearched = document.getElementById("clientToSearch").value;
+            let foundCliente;
+            let actual;
 
-        var show = arr[0].map((client) => {
-            foundCliente = client.name === cliSearched.toUpperCase();
-            if (foundCliente) {
-                actual = client;
+            var show = arr[0].map((client) => {
+                foundCliente = client.name === cliSearched.toUpperCase();
+                if (foundCliente) {
+                    actual = client;
+                }
+            });
+
+            if (actual !== undefined) {
+                document.getElementById("client").innerHTML = cardEnterprise(actual);
+            } else {
+                document.getElementById("client").innerHTML = "<h2>Cliente no encontrado</h2>";
             }
+
         });
+    } catch (error) {
+        console.log("Ha ocurrido un error: " + error);
+    }
 
-        if (actual !== undefined) {
-            document.getElementById("client").innerHTML = '<div class="card col-md-3 mr-5 mb-3" style="width:400px">' +
-                '<img src="' + actual.img + '" alt="Card image" style="width:100%">' +
-                '<div class="card-body">' +
-                '<h4 class="card-title" id="enterpriseName">' + actual.name + '</h4>' +
-                '<p class="card-text">' + actual.sector + '</p>' +
-                '<a href="" id="moreEnterprise" class="btn btn-primary">Ver mas</a>' +
-                '</div>' +
-                '</div>'
-        } else {
-            document.getElementById("client").innerHTML = "<h2>Cliente no encontrado</h2>";
-        }
-
-    });
 })();
+
+function cardGeneric(client) {
+    return '<div class="card col-md-3 mr-5 mb-3" style="width:400px">' +
+        '<img src="' + client.img + '" alt="Card image" style="width:100%">' +
+        '<div class="card-body">' +
+        '<h4 class="card-title">' + client.name + '</h4>' +
+        '<p class="card-text">Sofka se debe a sus clientes a quienes consideramos socios estratégicos...</p>' +
+        '<a href="" class="btn btn-primary">Ver mas</a>' +
+        '</div>' +
+        '</div>'
+}
+
+function cardEnterprise(clientEnterprise) {
+    return '<div class="card col-md-3 mr-5 mb-3" style="width:400px">' +
+        '<img src="' + clientEnterprise.img + '" alt="Card image" style="width:100%">' +
+        '<div class="card-body">' +
+        '<h4 class="card-title" id="enterpriseName">' + clientEnterprise.name + '</h4>' +
+        '<p class="card-text">' + clientEnterprise.sector + '</p>' +
+        '<a href="" id="moreEnterprise" class="btn btn-primary">Ver mas</a>' +
+        '</div>' +
+        '</div>'
+}
