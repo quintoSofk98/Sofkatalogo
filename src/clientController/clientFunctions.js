@@ -46,9 +46,8 @@ Client.prototype.getClientsPerson = (type) => {
             });
             document.getElementById("client").innerHTML = showEnterprise;
             document.getElementById("moreEnterprise").addEventListener('click', () => {
-                let enterpriseName = document.getElementById("enterpriseName").value;
-                //document.getElementById("client").innerHTML = cardEnterpriseDetails(actual);
-                console.log(document.getElementById("enterpriseName").value);
+                let enterpriseName= document.getElementById("enterpriseName").value;
+                console.log(enterpriseName);
             });
         });
     } catch (error) {
@@ -116,8 +115,9 @@ function cardEnterprise(clientEnterprise) {
         '<img src="' + clientEnterprise.img + '" alt="Card image" style="width:100%">' +
         '<div class="card-body">' +
         '<h4 class="card-title" id="enterpriseName">' + clientEnterprise.name + '</h4>' +
-        '<p class="card-text">' + clientEnterprise.sector + '</p>' +
-        '<a href="#" id="moreEnterprise" class="btn btn-primary">Ver mas</a>'+
+        '<p class="card-text">NIT: ' + clientEnterprise.nit + '</p>'+
+        '<p class="card-text">SECTOR: ' + clientEnterprise.sector + '</p>' +
+        '<a href=" ' + clientEnterprise.web + '" id="moreEnterprise" target="_blank" class="btn btn-primary">Ver mas</a>'+
         '</div>' +
         '</div>'
 }

@@ -11,20 +11,20 @@ class Project {
 }
 
 class Client {
-    constructor(name, type, img) {
+    constructor(name, type,img) {
         this.name = name;
         this.type = type;
         this.img = img;
-
     }
 };
 
 class Enterprise extends Client {
-    constructor (name, nit, size, sector, img){
+    constructor (name, nit, size, sector, img, web){
         super (name, "Empresa", img)
         this.nit = nit;
         this.size = size;
         this.sector = sector;
+        this.web = web;
        
     }
 };
