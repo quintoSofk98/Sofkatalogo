@@ -17,12 +17,18 @@ for (let i in clientList) {
                 return cardGeneric(client);
             });
         }
+        document.getElementById("allClients").addEventListener('click', () => {
+            document.getElementById("client").innerHTML = showClient;
+
+        });
         document.getElementById("client").innerHTML = showClient;
     } catch (error) {
         console.log("Ha ocurrido un error: " + error);
     }
 
 })();
+
+
 
 Client.prototype.getClientsPerson = (type) => {
     var filterPersona = arr.filter(function (client) {
@@ -65,13 +71,6 @@ Client.prototype.getClientsPerson = (type) => {
     }
 
 })();
-
-document.getElementById("allClients").addEventListener('click', () => {
-    //Debo verificar si ya estan cargados los otros archivos en la principal
-    document.getElementById("client").innerHTML = "todos";
-    //Client.prototype.getClients();
-});
-
 
 (Client.prototype.getClientsEnterpriseByName = () => {
 

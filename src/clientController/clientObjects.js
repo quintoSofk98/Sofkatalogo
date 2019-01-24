@@ -22,11 +22,11 @@ let roxana = new Person("Roxana Gonzalez", "1.020.456.846", "../imgs/clients/per
 let martha = new Person("Martha Arévalo", "37.080.664", "../imgs/clients/personaMujer.png");
 let gustavo = new Person("Gustavo Gómez", "1.100.950.935", "../imgs/clients/personaHombre.png");
 let diego = new Person("Diego Barco", "1.053.773.244", "../imgs/clients/personaHombre.png");
-let luisa = new Person("Diego Barco", "1.036.389.136", "../imgs/clients/personaMujer.png");
+let luisa = new Person("Luisa Montes", "1.036.389.136", "../imgs/clients/personaMujer.png");
 
 let clientsCollection = {
-    enterprises: [alpina, proteccion, sura, coordinadora, alfaPeople, amadeus, exito, infocorp, iteriaUS, metroM, sas, tecnoquimicas, teleperformance ],
-    persons: [juan, liza, roxana, martha, gustavo, diego, luisa]
+    "enterprises": [alpina, proteccion, sura, coordinadora, alfaPeople, amadeus, exito, infocorp, iteriaUS, metroM, sas, tecnoquimicas, teleperformance ],
+    "persons": [juan, liza, roxana, martha, gustavo, diego, luisa]
 }
 
 module.exports = clientsCollection;
